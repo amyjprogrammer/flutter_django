@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     
     #django apps
     'rest_framework',
+    'corsheaders',
     
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -133,3 +135,7 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Who can make cross-site HTTP requests
+
+CORS_ALLOW_ALL_ORIGINS = True
